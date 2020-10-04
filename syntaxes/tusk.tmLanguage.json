@@ -9,15 +9,34 @@
 			"include": "#strings"
 		},
 		{
+			"include": "#characters"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
 			"include": "#operators"
+		},
+		{
+			"include": "#comments"
 		}
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.tusk",
-				"match": "\\b(if|elif|else|while|each|fn|instance|static|return|proto|build|ovld|defer|access|var)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.tusk",
+					"match": "\\b(if|elif|else|while|each|return|build|defer|(break(?=\\.))|(continue(?=\\.)))\\b"
+				},
+				{
+					"name": "storage.type.tusk",
+					"match": "\\b(var|ovld|fn|proto)\\b"
+				},
+				{
+					"name": "storage.modifier.tusk",
+					"match": "\\b(static|instance)\\b"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.tusk",
@@ -30,11 +49,44 @@
 				}
 			]
 		},
+		"characters": {
+			"name": "constant.character.tusk",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"match": "(.|\\\\.)"
+				},
+				{
+					"name": "constant.character.escape.tusk",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"name": "constant.numeric.tusk",
+			"patterns": [
+				{
+					"name": "constant.numeric.tusk",
+					"match": "(\\-|\\+)?\\d*\\.?\\d*"
+				}
+			]
+		},
 		"operators": {
 			"patterns": [{
 				"name": "keyword.operator.tusk",
 				"match": "\\b(\\~|\\?|\\=\\>|\\=|\\&|\\||\\=\\=|\\!\\=|\\>|\\>\\=|\\<|\\<\\=|\\+\\+|\\-\\-|\\+\\=|\\-\\=|\\*\\=|\\/\\=|\\%\\=|\\^\\=|\\^|\\*|\\/|\\%|\\+|\\-|\\:\\:|\\:|\\?|\\!|\\-\\>|\\:\\=)\\b" 
 			}]
+		},
+		"comments": {
+			"begin": ";",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.comment.tusk"
+				}
+			},
+			"end": "$",
+			"name": "comment.line.character.tusk"
 		}
 	},
 	"scopeName": "source.tusk"
