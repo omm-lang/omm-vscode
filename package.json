@@ -1,0 +1,25 @@
+{
+    "name": "tusk",
+    "displayName": "Tusk",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.49.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "tusk",
+            "aliases": ["Tusk", "tusk"],
+            "extensions": [".tusk"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "tusk",
+            "scopeName": "source.tusk",
+            "path": "./syntaxes/tusk.tmLanguage.json"
+        }]
+    }
+}

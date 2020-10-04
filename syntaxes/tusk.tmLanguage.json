@@ -1,0 +1,41 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Tusk",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#operators"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.tusk",
+				"match": "\\b(if|elif|else|while|each|fn|instance|static|return|proto|build|ovld|defer|access|var)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.tusk",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.tusk",
+					"match": "\\\\."
+				}
+			]
+		},
+		"operators": {
+			"patterns": [{
+				"name": "keyword.operator.tusk",
+				"match": "\\b(\\~|\\?|\\=\\>|\\=|\\&|\\||\\=\\=|\\!\\=|\\>|\\>\\=|\\<|\\<\\=|\\+\\+|\\-\\-|\\+\\=|\\-\\=|\\*\\=|\\/\\=|\\%\\=|\\^\\=|\\^|\\*|\\/|\\%|\\+|\\-|\\:\\:|\\:|\\?|\\!|\\-\\>|\\:\\=)\\b" 
+			}]
+		}
+	},
+	"scopeName": "source.tusk"
+}
