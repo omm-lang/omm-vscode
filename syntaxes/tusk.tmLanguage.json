@@ -15,10 +15,16 @@
 			"include": "#numbers"
 		},
 		{
+			"include": "#bools"
+		},
+		{
 			"include": "#operators"
 		},
 		{
 			"include": "#comments"
+		},
+		{
+			"include": "#functioncalls"
 		}
 	],
 	"repository": {
@@ -50,7 +56,7 @@
 			]
 		},
 		"characters": {
-			"name": "constant.character.tusk",
+			"name": "string.quoted.single.tusk",
 			"begin": "'",
 			"end": "'",
 			"patterns": [
@@ -68,9 +74,15 @@
 			"patterns": [
 				{
 					"name": "constant.numeric.tusk",
-					"match": "(\\-|\\+)?\\d*\\.?\\d*"
+					"match": "\\d+"
 				}
 			]
+		},
+		"bools": {
+			"patterns": [{
+				"name": "storage.type.boolean",
+				"match": "\\b(true|false)\\b"
+			}]
 		},
 		"operators": {
 			"patterns": [{
@@ -87,6 +99,14 @@
 			},
 			"end": "$",
 			"name": "comment.line.character.tusk"
+		},
+		"functioncalls": {
+			"patterns": [
+				{
+					"name": "support.function.tusk",
+					"match": "((\\w|\\_|\\.)(\\d*))+(?=(\\:|\\?)(\\(|\\[))"
+				}
+			]
 		}
 	},
 	"scopeName": "source.tusk"
