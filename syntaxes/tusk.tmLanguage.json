@@ -43,7 +43,7 @@
 				},
 				{
 					"name": "storage.modifier.tusk",
-					"match": "\\b(static|instance)\\b"
+					"match": "\\b(static|instance|access)\\b"
 				}
 			]
 		},
