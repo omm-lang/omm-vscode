@@ -25,6 +25,9 @@
 		},
 		{
 			"include": "#functioncalls"
+		},
+		{
+			"include": "#variables"
 		}
 	],
 	"repository": {
@@ -105,6 +108,18 @@
 				{
 					"name": "support.function.tusk",
 					"match": "((\\w|\\_|\\.)(\\d*))+(?=(\\:|\\?)(\\(|\\[))"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "entity.name.variable",
+					"match": "((\\w|_|\\.)+)(?=\\s*\\:\\=)"
+				},
+				{
+					"name": "entity.name.variable",
+					"match": "(?<=((var|ovld)(\\s+|\\s*~\\s*)))((\\w|_|\\.)+)"
 				}
 			]
 		}
