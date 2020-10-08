@@ -49,8 +49,8 @@
 		},
 		"strings": {
 			"name": "string.quoted.double.tusk",
-			"begin": "\"",
-			"end": "\"",
+			"begin": "\"|`",
+			"end": "\"|`",
 			"patterns": [
 				{
 					"name": "constant.character.escape.tusk",
