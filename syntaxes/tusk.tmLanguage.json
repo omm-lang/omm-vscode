@@ -38,7 +38,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.tusk",
-					"match": "\\b(if|elif|else|while|each|return|build|defer|(break(?=\\.))|(continue(?=\\.)))\\b"
+					"match": "\\b(if|elif|else|while|each|return|build|defer|break|continue|try|catch)\\b"
 				},
 				{
 					"name": "storage.type.tusk",
