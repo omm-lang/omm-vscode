@@ -57,7 +57,7 @@
 			"patterns": [
 				{
 					"name": "constant.character.escape.tusk",
-					"match": "\\\\."
+					"match": "(\\\\.)"
 				}
 			]
 		},
@@ -65,10 +65,7 @@
 			"name": "string.quoted.single.tusk",
 			"begin": "'",
 			"end": "'",
-			"patterns": [
-				{
-					"match": "(.|\\\\.)"
-				},
+			"patterns": [	
 				{
 					"name": "constant.character.escape.tusk",
 					"match": "\\\\."
